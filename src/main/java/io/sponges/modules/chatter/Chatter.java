@@ -34,6 +34,11 @@ public class Chatter extends Module {
         getCommandManager().registerCommand(this, new Command("chat with the bot", "chatterbot", "c", "chatbot", "chat") {
             @Override
             public void onCommand(CommandRequest commandRequest, String[] args) {
+                if (args.length == 0) {
+                    commandRequest.reply("Usage: chat [question]");
+                    return;
+                }
+
                 Channel channel = commandRequest.getChannel();
                 ChatterBotSession session;
                 if (sessions.containsKey(channel)) {
