@@ -21,7 +21,7 @@ public class Chatter extends Module {
     private final Map<Channel, Mode> modes = new ConcurrentHashMap<>();
 
     public Chatter() {
-        super("ChatterBot", "1.01-SNAPSHOT");
+        super("ChatterBot", "1.02-SNAPSHOT");
     }
 
     @Override
